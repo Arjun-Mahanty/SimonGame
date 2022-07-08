@@ -4,9 +4,16 @@ body {
   }
   
   #level-title {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press start 2P', cursive;
     font-size: 3rem;
     margin:  5%;
+    color: #FEF2BF;
+  }
+
+  #highscore{
+    font-family: 'Press start 2P';
+    font-size: 3rem;
+    margin: 5%;
     color: #FEF2BF;
   }
   

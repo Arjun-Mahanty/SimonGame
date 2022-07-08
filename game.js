@@ -6,6 +6,7 @@ var userClickedPattern = [];
 
 var started = false;
 var level = 0;
+var highscore=0;
 
 $(document).keypress(function() {
   if (!started) {
@@ -30,6 +31,7 @@ function checkAnswer(currentLevel) {
 
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
       if (userClickedPattern.length === gamePattern.length){
+        highscore++;
         setTimeout(function () {
           nextSequence();
         }, 1000);
@@ -42,7 +44,7 @@ function checkAnswer(currentLevel) {
       setTimeout(function () {
         $("body").removeClass("game-over");
       }, 200);
-
+      $("#highscore").text("Your high score is "+highscore);
       startOver();
     }
 }
@@ -73,4 +75,5 @@ function startOver() {
   level = 0;
   gamePattern = [];
   started = false;
+  highscore=0;
 }
