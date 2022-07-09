@@ -7,6 +7,7 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 var highscore=0;
+var max=0;
 
 $(document).keypress(function() {
   if (!started) {
@@ -44,7 +45,8 @@ function checkAnswer(currentLevel) {
       setTimeout(function () {
         $("body").removeClass("game-over");
       }, 200);
-      $("#highscore").text("Your high score is "+highscore);
+      max=Math.max(max,highscore)
+      $("#highscore").text("Your high score is "+max);
       startOver();
     }
 }
